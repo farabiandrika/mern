@@ -59,13 +59,13 @@ export default function Button(props) {
   }
 
   return (
-    <Button
+    <button
       className={className.join(" ")}
       style={props.style}
       onClick={onClick}
     >
       {props.children}
-    </Button>
+    </button>
   );
 }
 
@@ -83,4 +83,5 @@ Button.propTypes = {
   isBlock: propTypes.bool,
   isExternal: propTypes.bool,
   hasShadow: propTypes.bool,
+  isPrimary: propTypes.bool,
 };
