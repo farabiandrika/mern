@@ -15,7 +15,9 @@ import Completed from "parts/Checkout/Completed";
 
 import itemDetails from "json/itemDetails.json";
 
-export default class Checkout extends Component {
+import { connect } from "react-redux";
+
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -43,9 +45,16 @@ export default class Checkout extends Component {
 
   render() {
     const { data } = this.state;
-    const checkout = {
-      duration: 3,
-    };
+    const { checkout } = this.props;
+
+    if (!checkout) {
+      return (
+        <Button className="btn" type="link" href="/" isLight>
+          Back
+        </Button>
+      );
+    }
+
     const steps = {
       bookingInformation: {
         title: "Booking Information",
@@ -174,3 +183,9 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+});
+
+export default connect(mapStateToProps)(Checkout);

@@ -1,10 +1,10 @@
 import React from "react";
 import "assets/scss/style.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import LandingPage from "elements/pages/LandingPage";
-import DetailPages from "elements/pages/DetailPages";
-import Examples from "elements/pages/Examples";
-import Checkout from "elements/pages/Checkout";
+import LandingPage from "pages/LandingPage";
+import DetailPages from "pages/DetailPages";
+import Examples from "pages/Examples";
+import Checkout from "pages/Checkout";
 
 function App() {
   return (
