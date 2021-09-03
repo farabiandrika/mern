@@ -32,7 +32,7 @@ export default function Categories({ data }) {
                               ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
                               : ""
                           }
-                          alt={item.name}
+                          alt={item.title}
                         />
                       </figure>
 
@@ -42,7 +42,7 @@ export default function Categories({ data }) {
                           href={`/properties/${item._id}`}
                           type="link"
                         >
-                          <h5 className="h4">{item.name}</h5>
+                          <h5 className="h4">{item.title}</h5>
                           <span className="text-gray-500">
                             {item.city}, {item.country}
                           </span>

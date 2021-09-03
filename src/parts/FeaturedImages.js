@@ -2,6 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 export default function FeaturedImages({ data }) {
+  console.log(data);
   return (
     <section className="container">
       <div className="container-grid sm">
@@ -16,7 +17,11 @@ export default function FeaturedImages({ data }) {
               <Fade bottom delay={300 * index}>
                 <div className="card h-100">
                   <figure className="img-wrapper">
-                    <img className="img-cover" src={item.url} alt={item._id} />
+                    <img
+                      className="img-cover"
+                      src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`}
+                      alt={item._id}
+                    />
                   </figure>
                 </div>
               </Fade>
